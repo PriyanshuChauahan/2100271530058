@@ -1,5 +1,7 @@
 
 const express = require('express')
+require('dotenv').config()
+ const token =process.ENV.token;
 const app = express()
 const port = 9876
 
@@ -16,7 +18,7 @@ let windowPrevState=[];
   axios.get(`http://20.244.56.144/test/${cat}`,{
     
     headers:
-    {  Authorization:  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE3ODI4NzIyLCJpYXQiOjE3MTc4Mjg0MjIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6IjFmMjNlNDc2LTc1MzctNDZkMC04ODUxLWNkZDk2Y2EwNTU0NyIsInN1YiI6InByaXlhbnNodTIxMTUzMDMyQGFrZ2VjLmFjLmluIn0sImNvbXBhbnlOYW1lIjoiQXBuYVl1ZyIsImNsaWVudElEIjoiMWYyM2U0NzYtNzUzNy00NmQwLTg4NTEtY2RkOTZjYTA1NTQ3IiwiY2xpZW50U2VjcmV0IjoiV0xqRkpnYmNNR0RJeXlxcyIsIm93bmVyTmFtZSI6IlByaXlhbnNodSBDaGF1aGFuIiwib3duZXJFbWFpbCI6InByaXlhbnNodTIxMTUzMDMyQGFrZ2VjLmFjLmluIiwicm9sbE5vIjoiMjEwMDI3MTUzMDA1OCJ9.aPihdZzO_-PcSP2Lvn8Kp0sMb-ylYfy8VqkcxHZ5ETM"}
+    {  Authorization:  `Bearer ${token}`}
 })
   .then(response => {
    
